@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cricket Career Sim</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.29.0"
+  }
+}
+</script>
+<style>
+      @keyframes fadeInOut {
+        0%, 100% { opacity: 0; transform: scale(0.9); }
+        20%, 80% { opacity: 1; transform: scale(1); }
+      }
+      .animate-fade-in-out {
+        animation: fadeInOut 3s ease-in-out forwards;
+      }
+      body {
+        font-family: 'Poppins', sans-serif;
+        background-color: #020617; /* bg-slate-950 */
+        position: relative;
+        min-height: 100vh;
+        color: #e2e8f0; /* text-slate-200 */
+      }
+      body::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url('https://images.unsplash.com/photo-1624899231849-415a728eda16?q=80&w=1974&auto=format&fit=crop') no-repeat center center/cover;
+        background-attachment: fixed;
+        opacity: 0.1;
+        z-index: -1;
+        transition: background-image 0.5s ease-in-out;
+      }
+      body.in-match::before {
+        background-image: url('https://images.unsplash.com/photo-1542563914-7299a9344272?q=80&w=2070&auto=format&fit=crop');
+        opacity: 0.15;
+      }
+      .glass-card {
+        background-color: rgba(15, 23, 42, 0.75); /* bg-slate-900/75 */
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 1rem; /* rounded-2xl */
+        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+      }
+       /* Custom scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: rgba(15, 23, 42, 0.5);
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #475569; /* bg-slate-600 */
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #64748b; /* bg-slate-500 */
+      }
+</style>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-slate-900 text-white">
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
